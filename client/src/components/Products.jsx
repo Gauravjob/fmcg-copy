@@ -4,11 +4,9 @@ import {
   LayoutGrid, 
   Coffee, 
   Cookie, 
-  Sparkles, 
   Home, 
   ArrowRight 
 } from 'lucide-react';
-import Reveal from './Reveal';
 import TiltCard from './TiltCard';
 import Section3DBackground from './Section3DBackground';
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, BadgeCheck, MapPin, Rocket,Store, RefreshCcw } from 'lucide-react';
+import { BadgeCheck, MapPin, Rocket, Store, RefreshCcw } from 'lucide-react';
 import Reveal from './Reveal';
 import TiltCard from './TiltCard';
 import Section3DBackground from './Section3DBackground';

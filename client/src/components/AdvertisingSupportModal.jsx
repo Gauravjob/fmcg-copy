@@ -6,15 +6,11 @@ import {
   Building2, 
   MapPin, 
   Megaphone, 
-  BarChart3, 
   Briefcase, 
-  IndianRupee, 
   MessageSquare, 
   CheckCircle2, 
   Upload, 
-  Globe,
   Plus,
-  Trash2,
   Loader2,
   FileText
 } from 'lucide-react';
@@ -96,11 +92,14 @@ const AdvertisingSupportModal = ({ isOpen, onClose }) => {
     return () => window.removeEventListener('keydown', handleEsc);
   }, [onClose]);
 
+  const prevIsOpen = React.useRef(false);
+
   useEffect(() => {
-    if (isOpen) {
+    if (isOpen && !prevIsOpen.current) {
       setCurrentStep(1);
       setIsSuccess(false);
     }
+    prevIsOpen.current = isOpen;
   }, [isOpen]);
 
   if (!isOpen && !isSuccess) return null;
@@ -208,13 +207,6 @@ const AdvertisingSupportModal = ({ isOpen, onClose }) => {
   ];
 
   const experienceOptions = ['< 1 Year', '1-3 Years', '3-5 Years', '5-10 Years', '10+ Years'];
-  const stateOptions = [
-    'Andhra Pradesh', 'Arunachal Pradesh', 'Assam', 'Bihar', 'Chhattisgarh', 
-    'Goa', 'Gujarat', 'Haryana', 'Himachal Pradesh', 'Jharkhand', 'Karnataka', 
-    'Kerala', 'Madhya Pradesh', 'Maharashtra', 'Manipur', 'Meghalaya', 'Mizoram', 
-    'Nagaland', 'Odisha', 'Punjab', 'Rajasthan', 'Sikkim', 'Tamil Nadu', 
-    'Telangana', 'Tripura', 'Uttar Pradesh', 'Uttarakhand', 'West Bengal'
-  ];
 
   const renderStep = () => {
     switch(currentStep) {

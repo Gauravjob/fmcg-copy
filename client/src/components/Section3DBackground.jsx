@@ -10,30 +10,29 @@ const COLORS = [
   { base: '#6366F1', light: '#A5B4FC' },
 ];
 
+const buildItems = () =>
+  Array.from({ length: 14 }, (_, i) => ({
+    id: i,
+    x: 5 + Math.random() * 88,
+    y: 5 + Math.random() * 88,
+    width: 28 + Math.random() * 54,
+    height: 22 + Math.random() * 44,
+    rotateX: Math.random() * 360,
+    rotateY: Math.random() * 360,
+    duration: 10 + Math.random() * 14,
+    delay: Math.random() * 5,
+    colorSet: COLORS[i % COLORS.length],
+  }));
+
 const Section3DBackground = () => {
-  const items = useMemo(
-    () =>
-      Array.from({ length: 14 }, (_, i) => ({
-        id: i,
-        x: 5 + Math.random() * 88,
-        y: 5 + Math.random() * 88,
-        width: 28 + Math.random() * 54,
-        height: 22 + Math.random() * 44,
-        rotateX: Math.random() * 360,
-        rotateY: Math.random() * 360,
-        duration: 10 + Math.random() * 14,
-        delay: Math.random() * 5,
-        colorSet: COLORS[i % COLORS.length],
-      })),
-    [],
-  );
+  const items = useMemo(() => buildItems(), []);
 
   return (
     <div className="absolute inset-0 overflow-hidden pointer-events-none z-0" style={{ perspective: 1200 }}>
       {items.map((item) => (
         <motion.div
           key={item.id}
-          className="absolute rounded-xl"
+          className="absolute rounded-xl"   
           style={{
             left: `${item.x}%`,
             top: `${item.y}%`,

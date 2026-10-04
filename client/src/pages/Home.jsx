@@ -16,7 +16,6 @@ import Testimonials from '../components/Testimonials';
 import ScrollToTop from '../components/ScrollToTop';
 import MobileStickyCTA from '../components/MobileStickyCTA';
 import WhatsAppWidget from '../components/WhatsAppWidget';
-import Section3DBackground from '../components/Section3DBackground';
 
 const Home = () => {
   return (

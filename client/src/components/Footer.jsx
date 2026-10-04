@@ -1,6 +1,5 @@
 import React from 'react';
 import { Mail, Phone, MapPin } from 'lucide-react';
-import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from 'react-icons/fa';
 import logo from '../assets/logo.png';
 const Footer = () => {
   return (

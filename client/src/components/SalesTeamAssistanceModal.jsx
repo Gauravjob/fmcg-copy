@@ -4,20 +4,16 @@ import api from '../utils/api';
 import { toast } from 'react-toastify';
 import { 
   X, 
-  Users, 
   MapPin, 
   Target, 
-  BarChart3, 
   TrendingUp, 
   MessageSquare, 
   CheckCircle2, 
   Upload, 
   Plus,
-  Trash2,
   Loader2,
   FileText,
-  Building,
-  Briefcase
+  Building
 } from 'lucide-react';
 
 const SectionHeader = ({ icon: Icon, title }) => (
@@ -93,11 +89,14 @@ const SalesTeamAssistanceModal = ({ isOpen, onClose }) => {
     return () => window.removeEventListener('keydown', handleEsc);
   }, [onClose]);
 
+  const prevIsOpen = React.useRef(false);
+
   useEffect(() => {
-    if (isOpen) {
+    if (isOpen && !prevIsOpen.current) {
       setCurrentStep(1);
       setIsSuccess(false);
     }
+    prevIsOpen.current = isOpen;
   }, [isOpen]);
 
   if (!isOpen && !isSuccess) return null;
@@ -196,7 +195,6 @@ const SalesTeamAssistanceModal = ({ isOpen, onClose }) => {
 
   const businessTypeOptions = ['Retailer', 'Distributor', 'Super Stockist', 'Wholesaler', 'FMCG Dealer', 'Modern Trade Partner', 'Other'];
   const stateOptions = ['Andhra Pradesh', 'Assam', 'Bihar', 'Gujarat', 'Haryana', 'Karnataka', 'Kerala', 'Maharashtra', 'Punjab', 'Rajasthan', 'Tamil Nadu', 'Telangana', 'Uttar Pradesh', 'West Bengal', 'Others'];
-  const coverageAreaOptions = ['Local Area', 'Single City', 'Multiple Cities', 'Entire District', 'Entire State'];
   const assistanceOptions = ['Sales Team Visit', 'Retail Expansion', 'Branding Support', 'Distribution Support', 'Product Launch', 'Market Survey'];
   const salesVolumeOptions = ['Below ₹50k', '₹50k - ₹2L', '₹2L - ₹5L', '₹5L - ₹10L', '₹10L+'];
 

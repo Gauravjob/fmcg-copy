@@ -43,7 +43,7 @@ const services = [
     btnText: 'Get Marketing Help',
     btnColor: 'bg-[#E33E2B]',
     iconColor: 'text-[#E33E2B]',
-    iconBg: 'bg-[#FDECEC]'
+    iconBg: 'bg-[#FDECEC]' 
   },
   {
     id: 3,

@@ -5,7 +5,6 @@ import CountUp from './CountUp';
 import Reveal from './Reveal';
 import TiltCard from './TiltCard';
 import Section3DBackground from './Section3DBackground';
-import yearsImg from '../assets/ChatGPT Image May 10, 2026, 02_11_52 PM (1).png';
 import distributorsImg from '../assets/sales_team.png';
 import retailersImg from '../assets/fmcg_products_cart_new.png';
 import statesImg from '../assets/india-map.png';

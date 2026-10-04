@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import {
-  Award, Network, Megaphone, Truck, Headset,
+  Network, Truck, Headset,
   ShieldCheck, Package, TrendingUp, IndianRupee, Users, ArrowRight, Star
 } from 'lucide-react';
 import warehouseImg from '../assets/warehouse_handshake.png';
